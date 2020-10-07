@@ -3,7 +3,7 @@
 
 Console.Write("Hello, my name is " + name);
 Console.WriteLine("Hello, my name is " + name); //Add new line
-Console.Readline(); //User input
+Console.ReadLine(); //User input
 /n //Add new line to text
 
 
@@ -166,6 +166,35 @@ class NewClass
     }
 
 }
+//NESTED CLASSES//////////////////
+
+class Outer_class {
+    
+    public static int attr1 = 70
+    public int attr2 = 1
+
+    public void method1()
+    {
+        ...
+    }
+
+    public class Inner_class {
+        //Code..
+        public void method2()
+        {
+            Console.Write(Outer_class.attr1) //Inner classes can access outer class  static attributes
+            Outer_Class oc = new Outer_Class();
+            Console.Write(oc.attr2) //Inner classes can acces outer class attribute of instances
+        }
+    }
+}
+
+Outer_class obj1 = new OuterClass();
+Outer_class.Inner_class obj2 = new Outer_class.Innerclass();
+obj1.method1(); //Outer class not allowed acces to inner classes methods
+obj2.method2();
+obj2.attr1
+
 
 //Instances are created in public void Main
 
